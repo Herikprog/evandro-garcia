@@ -19,7 +19,7 @@ const storeData = {
         calendarId: 'loja1.evandrogarcia@gmail.com',
         phone: '289 042 683',
         whatsapp: '925124104',
-        hours: 'Seg-Dom: 9h às 20h',
+        hours: 'Seg-Sab: 9h às 21h',
         feature: 'Studio de Tatuagem incluso',
         barbers: [
             {
@@ -51,7 +51,7 @@ const storeData = {
         calendarId: 'loja2.evandrogarcia@gmail.com',
         phone: '',
         whatsapp: '928264445',
-        hours: 'Seg-Dom: 9h às 20h',
+        hours: 'Todos os DIas: 9h às 20h',
         feature: 'SPA de Massagem incluso',
         barbers: [
             {
@@ -942,7 +942,7 @@ function initializeDateTimeSelection() {
         const timeSlots = [
             '09:00', '10:00', '11:00', '12:00', 
             '13:00', '14:00', '15:00', '16:00', 
-            '17:00', '18:00', '19:00'
+            '17:00', '18:00', '19:00','20:00'
         ];
 
         timeSlots.forEach(time => {
