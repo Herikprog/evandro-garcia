@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EVANDRO GARCIA - A barbearia premium onde tradição e modernidade se encontram para criar a experiência definitiva em cuidados masculinos">
+    <meta name="keywords" content="barbearia, corte masculino, barba, Faro, premium, evandro garcia">
+    <title>EVANDRO GARCIA - Beyond Excellence | A Arte do Corte Masculino</title>
+
+    <!-- Favicon básico -->
+    <link rel="icon" type="image/png" href="assets/images/LOGO.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="assets/images/LOGO.png" sizes="16x16">
+
+    <!-- Apple Touch Icon (iPhone, iPad, Android) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/LOGO.png">
+
+    <!-- Android Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/images/LOGO.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/images/LOGO.png">
+
+    <!-- Windows Metro -->
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="msapplication-TileImage" content="assets/images/LOGO.png">
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="assets/images/LOGO.png">
+
+    <!-- Tema do navegador -->
+    <meta name="theme-color" content="#000000">
+     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="cursor-glow"></div>
+    <canvas id="particles-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/LOGO.png" alt="EVANDRO GARCIA Logo">
+            </div>
+            
+            <!-- Player de Música Integrado na Navbar -->
+            <div class="music-player-integrated">
+                <!-- Disco Giratório -->
+                <div class="music-disc-navbar" id="music-disc-navbar">
+                    <div class="disc-inner-navbar">
+                        <div class="disc-center-navbar">
+                            <i class="fas fa-music"></i>
+                        </div>
+                        <div class="disc-ring-navbar disc-ring-1-navbar"></div>
+                        <div class="disc-ring-navbar disc-ring-2-navbar"></div>
+                        <div class="disc-ring-navbar disc-ring-3-navbar"></div>
+                    </div>
+                </div>
+                
+                <!-- Informações da Música -->
+                <div class="music-info-navbar">
+                    <div class="music-title-navbar" id="music-title-navbar">Carregando...</div>
+                    
+                    <!-- Barra de Progresso -->
+                    <div class="music-progress-navbar">
+                        <div class="progress-bar-navbar" id="progress-bar-navbar">
+                            <div class="progress-fill-navbar" id="progress-fill-navbar"></div>
+                        </div>
+                        <div class="time-display-navbar">
+                            <span id="current-time-navbar">0:00</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Controles de Música -->
+                    <div class="music-controls-navbar">
+                        <button class="music-btn-navbar prev-btn-navbar" id="prev-btn-navbar" aria-label="Música anterior">
+                            <i class="fas fa-step-backward"></i>
+                        </button>
+                        
+                        <button class="music-btn-navbar play-btn-navbar" id="play-btn-navbar" aria-label="Reproduzir/Pausar">
+                            <i class="fas fa-play" id="play-icon-navbar"></i>
+                            <i class="fas fa-pause" id="pause-icon-navbar" style="display: none;"></i>
+                        </button>
+                        
+                        <button class="music-btn-navbar next-btn-navbar" id="next-btn-navbar" aria-label="Próxima música">
+                            <i class="fas fa-step-forward"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="nav-menu">
+                <li><a href="#hero">Início</a></li>
+                <li><a href="#excelencia">Excelência</a></li>
+                <li><a href="#ambiente">Ambiente</a></li>
+                <li><a href="#trabalhos">Serviços</a></li>
+                <li><a href="#agendamento" class="nav-cta">Agendar</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Áudio Element (invisível) - Colocado fora da navbar para melhor controle -->
+    <audio id="bg-music" preload="auto" loop>
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-logo-large">
+                <img src="assets/images/LOGO.png" alt="EVANDRO GARCIA">
+            </div>
+            <h1 class="hero-title">
+                <span class="line-1">EVANDRO GARCIA</span>
+            </h1>
+            <p class="hero-subtitle typing-text">A Arte do Corte Masculino</p>
+            <p class="hero-tagline">Onde a tradição encontra a excelência</p>
+            <a href="#agendamento" class="hero-cta">
+                <span>AGENDAR HORÁRIO</span>
+                <div class="cta-shine"></div>
+            </a>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <p>Role para explorar</p>
+        </div>
+    </section>
+
+    <section id="excelencia" class="excelencia-section">
+        <div class="section-header">
+            <span class="section-number">01</span>
+            <h2 class="section-title">A Excelência no Corte Masculino</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="excelencia-content">
+            <p class="excelencia-intro">Onde tradição, estilo e precisão se encontram para criar a melhor versão de você.</p>
+            
+            <div class="excelencia-grid">
+                <div class="excelencia-card">
+                    <div class="excelencia-icon">✂️</div>
+                    <h3>Na Barbearia Evandro Garcia, cada detalhe importa.</h3>
+                    <p>Oferecemos uma experiência premium — ambiente sofisticado, atendimento personalizado e resultados impecáveis.</p>
+                </div>
+                
+                <div class="excelencia-card">
+                    <div class="excelencia-icon">⭐</div>
+                    <h3>Referência em Faro</h3>
+                    <p>Descubra por que somos referência em cortes masculinos de alto nível em Faro. Qualidade que se vê e se sente.</p>
+                </div>
+                
+                <div class="excelencia-card">
+                    <div class="excelencia-icon">👑</div>
+                    <h3>Experiência Premium</h3>
+                    <p>Mais do que um corte, uma experiência única que valoriza sua imagem e autoestima.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ambiente" class="ambiente-section">
+        <div class="section-header">
+            <span class="section-number">02</span>
+            <h2 class="section-title">Nosso Ambiente</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="video-container">
+            <div class="video-wrapper vertical-video">
+                <video 
+                    src="assets/cortes/VIDEO.mp4" 
+                    poster="assets/images/LOGO.png"
+                    playsinline
+                    preload="metadata"
+                    title="Vídeo EVANDRO GARCIA"
+                    id="ambiente-video"
+                >
+                Seu navegador não suporta o elemento de vídeo.
+            </video>
+                <div class="video-play-btn" id="video-play-btn">
+                <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+                    <circle cx="40" cy="40" r="40" fill="var(--secondary-gold)"/>
+                    <path d="M32 24L48 40L32 56V24Z" fill="var(--primary-black)"/>
+                </svg>
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="trabalhos" class="trabalhos-section">
+        <div class="section-header">
+            <span class="section-number">03</span>
+            <h2 class="section-title">Nossos Trabalhos</h2>
+            <div class="title-underline"></div>
+        </div>
+        <div class="gallery-carousel">
+            <div class="carousel-track" id="gallery-track">
+                <!-- Imagens e vídeos misturados -->
+                <div class="gallery-item" data-index="0">
+                    <div class="gallery-image-wrapper">
+                        <img 
+                            src="assets/cortes/corte1.jpg" 
+                            alt=""
+                            loading="lazy"
+                        >
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="1">
+                    <div class="gallery-image-wrapper">
+                        <video 
+                            src="assets/cortes/video1.mp4" 
+                            poster=""
+                            preload="metadata"
+                            loop
+                            muted
+                        ></video>
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="2">
+                    <div class="gallery-image-wrapper">
+                        <img 
+                            src="assets/cortes/corte2.jpg" 
+                            alt=""
+                            loading="lazy"
+                        >
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="3">
+                    <div class="gallery-image-wrapper">
+                        <video 
+                            src="assets/cortes/video2.mp4" 
+                            poster=""
+                            preload="metadata"
+                            loop
+                            muted
+                        ></video>
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="4">
+                    <div class="gallery-image-wrapper">
+                        <img 
+                            src="assets/cortes/corte3.jpg" 
+                            alt=""
+                            loading="lazy"
+                        >
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-item" data-index="5">
+                    <div class="gallery-image-wrapper">
+                        <video 
+                            src="assets/cortes/video3.mp4" 
+                            poster=""
+                            preload="metadata"
+                            loop
+                            muted
+                        ></video>
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" data-index="6">
+                    <div class="gallery-image-wrapper">
+                        <video 
+                            src="assets/cortes/video4.mp4" 
+                            poster=""
+                            preload="metadata"
+                            loop
+                            muted
+                        ></video>
+                        <div class="gallery-overlay">
+                            <h3></h3>
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- Fechamento correto do carousel-track -->
+            
+            <button class="carousel-btn prev" id="prev-btn">
+                <svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+            </button>
+            <button class="carousel-btn next" id="next-btn">
+                <svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+            </button>
+        </div>
+    </section>
+    
+    <section id="agendamento" class="agendamento-section">
+        <div class="section-header">
+            <span class="section-number">04</span>
+            <h2 class="section-title">Agende Seu Horário</h2>
+            <div class="title-underline"></div>
+        </div>
+
+        <div class="booking-container">
+            <div class="booking-progress">
+                <div class="progress-step active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-label">Serviço</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-label">Loja</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-label">Barbeiro</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-label">Dados</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="5">
+                    <div class="step-number">5</div>
+                    <div class="step-label">Data/Hora</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="6">
+                    <div class="step-number">6</div>
+                    <div class="step-label">Confirmação</div>
+                </div>
+            </div>
+
+            <div class="booking-form-container">
+                <div class="booking-step step-1 active">
+                    <h3>Escolha Seu Serviço</h3>
+                    <div class="service-selection-grid">
+                        <div class="service-selection-card" data-service="Corte e barba" data-price="20.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte e barba</h4>
+                            <p class="selection-price">€20,00</p>
+                            <p class="selection-desc">Corte e barba completo com acabamento premium</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte crianças" data-price="14.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte crianças</h4>
+                            <p class="selection-price">€14,00</p>
+                            <p class="selection-desc">Corte especial para crianças com ambiente acolhedor</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Criação de corte" data-price="17.00">
+                            <div class="selection-check"></div>
+                            <h4>Criação de corte</h4>
+                            <p class="selection-price">€17,00</p>
+                            <p class="selection-desc">Corte personalizado criado especialmente para você</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Barba e pé de cabelo" data-price="10.00">
+                            <div class="selection-check"></div>
+                            <h4>Barba e pé de cabelo</h4>
+                            <p class="selection-price">€10,00</p>
+                            <p class="selection-desc">Ajuste de barba e acabamento nas laterais</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte a zero" data-price="10.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte a zero</h4>
+                            <p class="selection-price">€10,00</p>
+                            <p class="selection-desc">Corte completo com máquina zero</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte e descoloração" data-price="45.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte e descoloração</h4>
+                            <p class="selection-price">€45,00</p>
+                            <p class="selection-desc">Corte com processo de descoloração profissional</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte e barba jovem UAIg" data-price="16.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte e barba jovem UAIg</h4>
+                            <p class="selection-price">€16,00</p>
+                            <p class="selection-desc">Corte e barba especial para jovens</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte e madeixas" data-price="45.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte e madeixas</h4>
+                            <p class="selection-price">€45,00</p>
+                            <p class="selection-desc">Corte com aplicação de madeixas</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte jovem UAIg" data-price="13.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte jovem UAIg</h4>
+                            <p class="selection-price">€13,00</p>
+                            <p class="selection-desc">Corte especializado para jovens</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte e pintura blaka" data-price="25.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte e pintura blaka</h4>
+                            <p class="selection-price">€25,00</p>
+                            <p class="selection-desc">Corte com pintura de alta qualidade</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Platinado" data-price="60.00">
+                            <div class="selection-check"></div>
+                            <h4>Platinado</h4>
+                            <p class="selection-price">€60,00</p>
+                            <p class="selection-desc">Processo completo de platinado profissional</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte de Máquina" data-price="10.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte de Máquina</h4>
+                            <p class="selection-price">€10,00</p>
+                            <p class="selection-desc">Corte completo apenas com máquina</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Barba" data-price="10.00">
+                            <div class="selection-check"></div>
+                            <h4>Barba</h4>
+                            <p class="selection-price">€10,00</p>
+                            <p class="selection-desc">Barba completa com acabamento na navalha</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Coloração" data-price="30.00">
+                            <div class="selection-check"></div>
+                            <h4>Coloração</h4>
+                            <p class="selection-price">€30,00</p>
+                            <p class="selection-desc">Coloração profissional para cabelo</p>
+                        </div>
+                        <div class="service-selection-card" data-service="Corte" data-price="15.00">
+                            <div class="selection-check"></div>
+                            <h4>Corte</h4>
+                            <p class="selection-price">€15,00</p>
+                            <p class="selection-desc">Corte clássico com técnicas modernas</p>
+                        </div>
+                    </div>
+                    <button class="booking-next-btn" disabled>Continuar</button>
+                </div>
+
+                <div class="booking-step step-2">
+                    <h3>Escolha a Loja</h3>
+                    <div class="store-selection-grid">
+                        <div class="store-selection-card" data-store="1">
+                            <div class="selection-check"></div>
+                            <h4>Loja 1 - Centro</h4>
+                            <p class="store-address">Largo de Camões n3, 8000-140 Faro</p>
+                            <p class="store-hours">Seg-Sab: 9h às 20h</p>
+                            <p class="store-feature">📱 WhatsApp: 925 124 104</p>
+                            <p class="store-feature">🎨 Studio de Tatuagem incluso • ✨ Também fazemos tranças</p>
+                        </div>
+                        <div class="store-selection-card" data-store="2">
+                            <div class="selection-check"></div>
+                            <h4>Loja 2 - Vale da Amoreira</h4>
+                            <p class="store-address">R. Vale da Amoreira, 8000-429 Faro</p>
+                            <p class="store-hours">Todos os Dias: 9h às 20h</p>
+                            <p class="store-feature">📱 WhatsApp: 928 264 445</p>
+                            <p class="store-feature">💆 SPA de Massagem incluso • ✨ Também fazemos tranças</p>
+                        </div>
+                    </div>
+                    <div class="booking-buttons">
+                        <button class="booking-back-btn">Voltar</button>
+                        <button class="booking-next-btn" disabled>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="booking-step step-3">
+                    <h3>Escolha o Barbeiro</h3>
+                    <div class="barber-selection-grid" id="barber-selection">
+                        <!-- Barbeiros serão carregados dinamicamente conforme a loja selecionada -->
+                    </div>
+                    <div class="booking-buttons">
+                        <button class="booking-back-btn">Voltar</button>
+                        <button class="booking-next-btn" disabled>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="booking-step step-4">
+                    <h3>Seus Dados</h3>
+                    <form id="customer-form">
+                        <div class="form-group">
+                            <label for="customer-name">Nome Completo</label>
+                            <input type="text" id="customer-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">Email</label>
+                            <input type="email" id="customer-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">Telefone</label>
+                            <input type="tel" id="customer-phone" required>
+                        </div>
+                    </form>
+                    <div class="booking-buttons">
+                        <button class="booking-back-btn">Voltar</button>
+                        <button class="booking-next-btn" disabled>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="booking-step step-5">
+                    <h3>Escolha Data e Horário</h3>
+                    <div class="date-time-selector">
+                        <div class="date-selector">
+                            <label>Selecione a Data</label>
+                            <input type="date" id="booking-date" required>
+                        </div>
+                        <div class="time-selector">
+                            <label>Selecione o Horário</label>
+                            <div class="time-slots" id="time-slots">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking-buttons">
+                        <button class="booking-back-btn">Voltar</button>
+                        <button class="booking-next-btn" disabled>Continuar</button>
+                    </div>
+                </div>
+
+                <div class="booking-step step-6">
+                    <h3>Confirmação do Agendamento</h3>
+                    <div class="booking-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Serviço:</span>
+                            <span class="summary-value" id="summary-service"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Preço:</span>
+                            <span class="summary-value" id="summary-price"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Loja:</span>
+                            <span class="summary-value" id="summary-store"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Barbeiro:</span>
+                            <span class="summary-value" id="summary-barber"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Nome:</span>
+                            <span class="summary-value" id="summary-name"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Email:</span>
+                            <span class="summary-value" id="summary-email"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Telefone:</span>
+                            <span class="summary-value" id="summary-phone"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Data:</span>
+                            <span class="summary-value" id="summary-date"></span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Horário:</span>
+                            <span class="summary-value" id="summary-time"></span>
+                        </div>
+                    </div>
+                    <div class="booking-buttons">
+                        <button class="booking-back-btn">Voltar</button>
+                        <button class="booking-confirm-btn">Confirmar Agendamento</button>
+                    </div>
+                    <div class="confirmation-message" id="confirmation-message">
+                        <div class="success-icon">✓</div>
+                        <h4>Agendamento Confirmado!</h4>
+                        <p class="calendar-added" id="calendar-status"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <img src="assets/images/LOGO.png" alt="EVANDRO GARCIA" class="footer-logo">
+                <p class="footer-tagline">Excelência em Cada Detalhe</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Loja 1</p>
+                <a href="https://wa.me/351925124104">WhatsApp Loja 1: 925 124 104</a>
+                <a href="https://maps.app.goo.gl/example">Largo de Camões n3, 8000-140 Faro</a>
+                <p>Loja 2</p>
+                <a href="https://wa.me/351928264445">WhatsApp Loja 2: 928 264 445</a>
+                <a href="https://maps.app.goo.gl/example">R. Vale da Amoreira, 8000-429 Faro</a>
+            </div>
+            <div class="footer-section">
+                <h4>Horário</h4>
+                <p>Loja 1</p>
+                <p>Segunda a Sabado: 9h - 20h</p>
+                <p>Loja 2</p>
+                <p>Aberto todos os dias: 9h - 20h</p>
+            </div>
+            <div class="footer-section">
+                <h4>Redes Sociais</h4>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/nilton_23_barber/" aria-label="Instagram">Instagram</a>
+                    <a href="https://wa.me/351925124104" aria-label="WhatsApp Loja 1">WhatsApp Loja 1</a>
+                    <a href="https://wa.me/351928264445" aria-label="WhatsApp Loja 2">WhatsApp Loja 2</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 EVANDRO GARCIA BY BRAGA WORK. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

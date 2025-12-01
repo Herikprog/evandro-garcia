@@ -1,0 +1,27 @@
+{
+  "name": "evandro-garcia-barber",
+  "version": "1.0.0",
+  "description": "Sistema de agendamento para barbearia premium EVANDRO GARCIA",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "barber",
+    "agendamento",
+    "barbearia",
+    "portugal",
+    "portimao"
+  ],
+  "author": "EVANDRO GARCIA",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "googleapis": "^126.0.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
