@@ -938,11 +938,11 @@ function initializeDateTimeSelection() {
         if (!timeSlotsContainer) return;
         
         timeSlotsContainer.innerHTML = '';
-        // Horários das 9h às 20h
+        // Horários das 9h às 20h (agora incluindo 20h)
         const timeSlots = [
             '09:00', '10:00', '11:00', '12:00', 
             '13:00', '14:00', '15:00', '16:00', 
-            '17:00', '18:00', '19:00','20:00'
+            '17:00', '18:00', '19:00', '20:00'  // Adicionado 20:00
         ];
 
         timeSlots.forEach(time => {
@@ -979,6 +979,7 @@ function initializeDateTimeSelection() {
     // Initial setup
     generateTimeSlots();
 }
+
 
 function initializeNavigation() {
     // Next buttons
