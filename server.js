@@ -173,8 +173,8 @@ app.get('/api/availability', async (req, res) => {
             });
         }
         
-        // Para simplificar, retornamos todos os horários como disponíveis
-        const allTimeSlots = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00'];
+        // Horários disponíveis até 20h
+        const allTimeSlots = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
         
         res.json({ 
             success: true,
@@ -260,7 +260,10 @@ app.get('/api/services', (req, res) => {
         { name: 'Corte de Máquina', price: 10.00, duration: '20 min' },
         { name: 'Barba', price: 10.00, duration: '25 min' },
         { name: 'Coloração', price: 30.00, duration: '60 min' },
-        { name: 'Corte', price: 15.00, duration: '30 min' }
+        { name: 'Corte', price: 15.00, duration: '30 min' },
+        { name: 'Assinatura Mensal Corte', price: 50.00, duration: '60 min' },
+        { name: 'Assinatura Mensal Corte barba', price: 70.00, duration: '90 min' },
+        { name: 'Assinatura Mensal Corte Ualg', price: 45.00, duration: '60 min' }
     ];
     
     res.json({ success: true, services });
@@ -274,14 +277,14 @@ app.get('/api/stores', (req, res) => {
             address: 'Largo de Camões n3, 8000-140 Faro',
             phone: '289 042 683',
             whatsapp: '925124104',
-            hours: 'Seg-Dom: 9h às 20h',
+            hours: 'Seg-Sab: 9h às 20h', // Alterado para 20h
             feature: 'Studio de Tatuagem incluso'
         },
         '2': { 
             name: 'Loja 2 - Vale da Amoreira', 
             address: 'R. Vale da Amoreira, 8000-429 Faro',
             whatsapp: '928264445',
-            hours: 'Seg-Dom: 9h às 20h',
+            hours: 'Todos os Dias: 9h às 20h', // Alterado para 20h
             feature: 'SPA de Massagem incluso'
         }
     };
